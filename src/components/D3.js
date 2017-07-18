@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from './common/Spinner';
-import key from '../key'
+
 
 class D3 extends Component {
   constructor(props){
     super(props)
     this.state = {
       username: props.match.params.user,
+      userid: '',
       apiData: '',
       loading:true
     }
   }
   
-
+  componentDidMount(){
+    axios.get(`http://localhost:3030/api/${this.state.username}`)
+    .then((response)=>{
+      console.log(response.data)
+      this.setState({userid: response.data.id, loading: false})
+    }) 
+  }
+  
   render(props){
     return(
       <div>
         <h1>D3</h1>
         <h1>{this.state.username}</h1>
-        <h4>{this.state.apiData}</h4>
+        <h4>{this.state.apiData.id}</h4>
         
         <Spinner />
       </div>
