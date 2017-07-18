@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import Spinner from './common/Spinner'
+import axios from 'axios';
+import Spinner from './common/Spinner';
+import key from '../key'
 
 class D3 extends Component {
   constructor(props){
     super(props)
     this.state = {
       username: props.match.params.user,
-      data: '',
+      apiData: '',
       loading:true
     }
   }
   
+
   render(props){
     return(
       <div>
         <h1>D3</h1>
         <h1>{this.state.username}</h1>
+        <h4>{this.state.apiData}</h4>
+        
         <Spinner />
       </div>
     )
