@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const InputBox = ({handleUsernameChange, username}) => {
     return(
@@ -7,7 +8,7 @@ const InputBox = ({handleUsernameChange, username}) => {
           Username:
           <input type="text" name="name" value={username} onChange={handleUsernameChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <Link to={username}> GO</Link>
       </form>
     )
 }
