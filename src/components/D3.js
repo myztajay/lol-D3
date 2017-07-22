@@ -8,7 +8,7 @@ class D3 extends Component {
     super(props)
     this.state = {
       username: props.match.params.user,
-      userid: '',
+      userId: '',
       apiData: '',
       loading:true
     }
@@ -18,8 +18,13 @@ class D3 extends Component {
     axios.get(`http://localhost:3030/api/${this.state.username}`)
     .then((response)=>{
       console.log(response.data)
-      this.setState({userid: response.data.id, loading: false})
+      this.setState({userId: response.data.id, loading: false})
     }) 
+    // axios.get(`http://localhost:3030/api/${this.state.userId}/matches`)
+    // .then((response)=>{
+    //   console.log(response)
+    //   // this.setState({userid: response.data.id, loading: false})
+    // })
   }
   
   render(props){
