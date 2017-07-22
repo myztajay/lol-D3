@@ -4,13 +4,17 @@ import Spinner from './common/Spinner';
 import Graph from './common/Graph'
 
 
-class D3 extends Component {
+class GraphDisplay extends Component {
   constructor(props){
     super(props)
     this.state = {
       username: props.match.params.user,
       userId: '',
-      matches: [],
+      top:'',
+      jungle: '',
+      mid: '',
+      bottom: '',
+      support: '',
       loading:true
     }
   }
@@ -19,7 +23,10 @@ class D3 extends Component {
     axios.get(`http://localhost:3030/api/${this.state.username}`)
     .then((response)=>{
       console.log(response.data)
-      this.setState({userId: response.data.userId, matches: response.data.userMatches, loading: false})
+      this.setState({
+        userId: response.data.userId, 
+        matches: response.data.userMatches, 
+        loading: false})
     }) 
   }
   
@@ -43,4 +50,4 @@ class D3 extends Component {
   }
 } 
 
-export default D3;
+export default GraphDisplay;

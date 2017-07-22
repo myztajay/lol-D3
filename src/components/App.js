@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import '../styles/App.css'
 import Landing from './Landing'
 import About from './About'
-import D3 from './D3'
+import GraphDisplay from './GraphDisplay'
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route path="/about" component={About} />
-            <Route path="/:user" component={D3}/>
+            <Route path="/:user" component={GraphDisplay}/>
           </Switch>
         </div>
       </BrowserRouter>
