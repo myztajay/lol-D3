@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from './common/Spinner';
-import Graph from './common/Graph';
+import Graph from './BarGraph';
 import GraphNavbar from './GraphNavbar';
 import '../styles/GraphDisplay.css';
 
@@ -37,7 +37,7 @@ class GraphDisplay extends Component {
     else {
     return(
       <div className='graphDisplay'>
-        {/* <GraphNavbar /> */}
+        <GraphNavbar />
         <h1>D3</h1>
         <h1>{this.state.username}</h1>
         <Graph matches={this.state.matches} />

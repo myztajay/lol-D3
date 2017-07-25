@@ -1,10 +1,10 @@
 import React from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Radar } from 'react-chartjs-2'
 
-const Graph = (props) => {
+const RadarGraph = (props) => {
 
   return(
-    <Bar
+    <Radar
       data={{
         labels:['TOP', 'JUNGLE', 'MID', 'BOTTOM', 'SUPPORT'],
         datasets: [
@@ -36,4 +36,4 @@ const Graph = (props) => {
   ) 
 }
 
-export default Graph
+export default RadarGraph
