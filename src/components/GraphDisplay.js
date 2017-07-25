@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from './common/Spinner';
-import Graph from './BarGraph';
+import BarGraph from './BarGraph';
+import RadarGraph from './RadarGraph';
+import DoughnutGraph from './DoughnutGraph'
 import GraphNavbar from './GraphNavbar';
 import '../styles/GraphDisplay.css';
 
@@ -13,7 +15,8 @@ class GraphDisplay extends Component {
       username: props.match.params.user,
       matches: [],
       userId: '',
-      loading:true
+      loading:true,
+      graph: ''
     }
   }
   
@@ -24,26 +27,34 @@ class GraphDisplay extends Component {
       this.setState({
         userId: response.data.userId, 
         matches: response.data.userMatches, 
+        graph: 'bar',
         loading: false})
     }) 
   }
   
+  handleGraphChange =(e, graph) =>{
+    e.preventDefault()
+    this.setState({
+      graph
+    })
+    console.log(this.state.graph)
+  }
+
+  
   render(props){
-    if(this.state.loading){
-      return(  
-        <Spinner />
-      )
-    }
-    else {
+    let Component = ''
+    if(this.state.loading){ Component = <Spinner /> }
+    if(this.state.graph === 'bar') Component = < BarGraph matches={ this.state.matches }/>
+    if(this.state.graph === 'doughnut') Component = < DoughnutGraph matches={ this.state.matches } />
+    if(this.state.graph === 'radar') Component = < RadarGraph matches={ this.state.matches } />
+    
     return(
       <div className='graphDisplay'>
-        <GraphNavbar />
-        <h1>D3</h1>
-        <h1>{this.state.username}</h1>
-        <Graph matches={this.state.matches} />
+        <GraphNavbar handleGraphChange={this.handleGraphChange}/>
+        {Component}
       </div>
     )
-  }
+  
   }
 } 
 
