@@ -1,17 +1,38 @@
 import React from 'react'
+import { Bar } from 'react-chartjs-2'
 
 const Graph = (props) => {
-  const top = props.matches.filter(lane => {return lane === "TOP"}).length
-  const jungle = props.matches.filter(lane => {return lane === "JUNGLE"}).length
-  const mid = props.matches.filter(lane => {return lane === "MID"}).length
-  const bottom = props.matches.filter(lane => {return lane === "BOTTOM"}).length
-  const support = props.matches.filter(lane => {return lane === "SUPPORT"}).length
-  
+
   return(
-    <div>
-    <h1>{top}</h1>
-    <h1>{jungle}</h1>
-    </div>
+    <Bar
+      data={{
+        labels:['TOP', 'JUNGLE', 'MID', 'BOTTOM', 'SUPPORT'],
+        datasets: [
+          {
+          label: 'League Lane Data',
+          data:[
+            props.matches.filter((lane)=>{
+              return lane === 'TOP'
+            }).length,
+            props.matches.filter((lane)=>{
+              return lane === 'JUNGLE'
+            }).length,
+            props.matches.filter((lane)=>{
+              return lane === 'MID'
+            }).length,
+            props.matches.filter((lane)=>{
+              return lane === 'BOTTOM'
+            }).length,
+            props.matches.filter((lane)=>{
+              return lane === 'SUPPORT'
+            }).length
+          ]
+          
+        }]
+      }} 
+    width={50}
+    height={10}
+    />
   ) 
 }
 

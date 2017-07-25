@@ -9,12 +9,8 @@ class GraphDisplay extends Component {
     super(props)
     this.state = {
       username: props.match.params.user,
+      matches: [],
       userId: '',
-      top:'',
-      jungle: '',
-      mid: '',
-      bottom: '',
-      support: '',
       loading:true
     }
   }

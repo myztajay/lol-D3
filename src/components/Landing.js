@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import InputBox from './common/InputBox'
+import { Col, Card } from 'react-materialize'
+import '../styles/Landing.css'
 
 class Landing extends Component {
   state = {
@@ -12,9 +14,12 @@ class Landing extends Component {
   
   render(){
     return(
-      <div>
-        <h1>Landing</h1>
-        <InputBox handleUsernameChange={this.handleUsernameChange.bind(this)} username={this.state.username} />
+      <div className='landing'>
+        <Col m={1} s={6} >
+		       <Card className='blue-grey darken-1' textClassName='white-text' title='Choose Summoner Name' >
+		       <InputBox handleUsernameChange={this.handleUsernameChange.bind(this)} username={this.state.username} />
+		      </Card>
+        </Col>
       </div>
     ) 
   }

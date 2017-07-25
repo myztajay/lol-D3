@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { Button, Icon } from 'react-materialize'
 
 const InputBox = ({handleUsernameChange, username}) => {
     return(
@@ -8,7 +9,9 @@ const InputBox = ({handleUsernameChange, username}) => {
           Username:
           <input type="text" name="name" value={username} onChange={handleUsernameChange} />
         </label>
-        <Link to={username}> GO</Link>
+        <div>  
+      		<Link to={username}><Button waves='light'>button<Icon left>cloud</Icon></Button></Link>
+        </div>
       </form>
     )
 }

@@ -1,0 +1,11 @@
+.landing{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  max-width: 400px;
+}
