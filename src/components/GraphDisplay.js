@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from './common/Spinner';
-import Graph from './common/Graph'
+import Graph from './common/Graph';
+import '../styles/GraphDisplay.css'
 
 
 class GraphDisplay extends Component {
@@ -28,15 +29,13 @@ class GraphDisplay extends Component {
   
   render(props){
     if(this.state.loading){
-      return(
-        <div>
+      return(  
         <Spinner />
-        </div>
       )
     }
     else {
     return(
-      <div>
+      <div className='graphDisplay'>
         <h1>D3</h1>
         <h1>{this.state.username}</h1>
         <Graph matches={this.state.matches} />

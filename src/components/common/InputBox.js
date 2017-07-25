@@ -10,7 +10,7 @@ const InputBox = ({handleUsernameChange, username}) => {
           <input type="text" name="name" value={username} onChange={handleUsernameChange} />
         </label>
         <div>  
-      		<Link to={username}><Button waves='light'>button<Icon left>cloud</Icon></Button></Link>
+      		<Link to={username}><Button className='light-blue darken-4' waves='light'>Search Summoner<Icon left>search</Icon></Button></Link>
         </div>
       </form>
     )

@@ -8,6 +8,7 @@ body {
   margin: 0 auto;
   justify-content: center;
   min-height: 100vh;
+  background: linear-gradient( #e3f2fd, #90caf9);
 }
 
 #root{

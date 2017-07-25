@@ -16,7 +16,7 @@ class Landing extends Component {
     return(
       <div className='landing'>
         <Col m={1} s={6} >
-		       <Card className='blue-grey darken-1' textClassName='white-text' title='Choose Summoner Name' >
+		       <Card className='teal lighten-5' textClassName='white-text' title='Choose Summoner Name' >
 		       <InputBox handleUsernameChange={this.handleUsernameChange.bind(this)} username={this.state.username} />
 		      </Card>
         </Col>
