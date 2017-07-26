@@ -1,7 +1,10 @@
 .graphDisplay{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
+}
+
+canvas{
+  max-height: 600px
 }

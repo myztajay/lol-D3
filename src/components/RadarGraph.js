@@ -26,12 +26,10 @@ const RadarGraph = (props) => {
             props.matches.filter((lane)=>{
               return lane === 'SUPPORT'
             }).length
-          ]
-          
+          ]  
         }]
       }} 
-    width={50}
-    height={10}
+      options={{ maintainAspectRatio: false}}
     />
   ) 
 }

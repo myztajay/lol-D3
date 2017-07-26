@@ -1,5 +1,6 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
+import '../styles/GraphDisplay.css';
 
 const BarGraph = (props) => {
 
@@ -26,12 +27,16 @@ const BarGraph = (props) => {
             props.matches.filter((lane)=>{
               return lane === 'SUPPORT'
             }).length
-          ]
+          ],
           
         }]
       }} 
-    width={50}
-    height={10}
+
+	    height={30}
+      options={{ maintainAspectRatio: false}}
+      
+      // responsive={true}
+    
     />
   ) 
 }

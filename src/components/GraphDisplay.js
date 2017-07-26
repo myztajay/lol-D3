@@ -32,29 +32,25 @@ class GraphDisplay extends Component {
     }) 
   }
   
-  handleGraphChange =(e, graph) =>{
+  handleGraphChange = (e, graph) =>{
     e.preventDefault()
-    this.setState({
-      graph
-    })
+    this.setState({ graph })
     console.log(this.state.graph)
   }
 
-  
+
   render(props){
     let Component = ''
     if(this.state.loading){ Component = <Spinner /> }
-    if(this.state.graph === 'bar') Component = < BarGraph matches={ this.state.matches }/>
+    if(this.state.graph === 'bar') Component = < BarGraph className='barClass' matches={ this.state.matches } />
     if(this.state.graph === 'doughnut') Component = < DoughnutGraph matches={ this.state.matches } />
     if(this.state.graph === 'radar') Component = < RadarGraph matches={ this.state.matches } />
-    
     return(
       <div className='graphDisplay'>
         <GraphNavbar handleGraphChange={this.handleGraphChange}/>
         {Component}
       </div>
     )
-  
   }
 } 
 

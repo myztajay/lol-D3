@@ -1,8 +1,9 @@
-import React from 'react'
-import { Doughnut } from 'react-chartjs-2'
+import React from 'react';
+import { Doughnut } from 'react-chartjs-2';
+import '../styles/GraphDisplay.css';
+
 
 const DoughnutGraph = (props) => {
-
   return(
     <Doughnut
       data={{
@@ -27,11 +28,9 @@ const DoughnutGraph = (props) => {
               return lane === 'SUPPORT'
             }).length
           ]
-          
         }]
       }} 
-    width={50}
-    height={10}
+      options={{ maintainAspectRatio: false}}
     />
   ) 
 }
