@@ -4,7 +4,21 @@
   align-items: center;
   min-height: 80vh;
 }
-
+nav{
+  max-width: 80%;
+}
 canvas{
-  max-height: 600px
+  max-height: 600px;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .Navbar {
+    width: 100%px;
+  }
+  nav{
+    max-width: 100%;
+  }
 }

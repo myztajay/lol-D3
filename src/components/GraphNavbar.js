@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, NavItem } from 'react-materialize';
+import '../styles/GraphDisplay.css';
 
 
 const GraphNavbar = (props) =>{
